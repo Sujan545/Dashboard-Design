@@ -5,7 +5,7 @@ import Activity from "../components/shared/ActivityCard";
 import Performance from "../components/shared/PerformanceCard";
 
 
-export default function DashboardPage() {
+export default function Dashboard() {
 
     const cardInfo = [
         {

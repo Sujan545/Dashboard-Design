@@ -1,8 +1,10 @@
 import { Routes,Route, Navigate } from 'react-router-dom'
 import './App.css'
 
-import DashboardPage from './pages/DashboardPage'
+import Dashboard from './pages/DashboardPage'
 import MainLayout from './layout/MainLayout'
+import Templates from './pages/TemplatesPage'
+import TemplateEdit from './pages/TemplateEditPage'
 
 
 function App() {
@@ -13,7 +15,9 @@ function App() {
  <Routes>
   <Route path='/' element={<MainLayout/>}>
     <Route index element={<Navigate to = "/dashboard"/>}/>
-    <Route path='dashboard' element={<DashboardPage/>}/>
+    <Route path='dashboard' element={<Dashboard/>}/>
+    <Route path='templates' element={<Templates/>}/>
+    <Route path='template/edit' element={<TemplateEdit/>}/>
 
   </Route>
  </Routes>

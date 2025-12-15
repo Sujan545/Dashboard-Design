@@ -11,7 +11,7 @@ export default function Performance ({title, value,percentage,icon:Icon}:Perform
  const colorCheck: Record<string, string> = {
     Email: "bg-blue-400",
     SMS: " bg-green-400",
-    Voice: " bg-purple-400",
+    Voice: "bg-purple-400",
 };
 const bgColor=colorCheck[title] ?? "bg-blue-100"
     return(
