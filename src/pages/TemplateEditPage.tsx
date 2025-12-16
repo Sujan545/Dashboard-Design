@@ -1,4 +1,4 @@
-import { Mail, MessageCircle, PhoneCallIcon, type LucideIcon } from "lucide-react"
+import { AtomIcon, Mail, MessageCircle, PhoneCallIcon, Plus, type LucideIcon } from "lucide-react"
 import { useState } from "react";
 
 interface ButtonProps {
@@ -9,12 +9,13 @@ interface ButtonProps {
 }
 interface TokenProps {
     text: string
-}
+};
+
 
 function Token({ text }: TokenProps) {
     return (
         <button className="hover:bg-gray-200 text-gray-700 tracking-wider w-full text-xs text-left px-4 py-2 rounded-md">
-            {"{{"+text+"}}"}
+            {"{{" + text + "}}"}
         </button>
     )
 }
@@ -61,7 +62,18 @@ export default function TemplateEdit() {
             button: "Voice",
             icon: PhoneCallIcon
         }
-    ]
+    ];
+  const templateText = `Dear {{First Name}},
+
+We hope this message finds you well. We wanted to remind you that your payment of {{Amount}} was due on {{Due Date}}.
+
+Please click the link below to make your payment:
+{{Payment Link}}
+
+If you have any questions, please don't hesitate to contact us.
+
+Best regards,
+Collections Team`;
     return (
         <>
             <div className="flex justify-between items-center">
@@ -115,7 +127,24 @@ export default function TemplateEdit() {
                             ))}
                         </div>
                     </div>
+                    <div className="rounded-md border border-gray-200 p-4">
+                        <h4>Message Content</h4>
+                        <div className="w-full ">
+                            <p className="pt-4">Subject Line</p>
+                            <input
+                                className="w-full p-2  bg-gray-100 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                type="text"
+                                placeholder="Payment Reminder {{ Company Name }}" />
+                        </div>
+                        <div>
+                            <p className="py-4">Message Body</p>
+                            <textarea  className="w-full h-40 p-2 focus:ring-2 focus:outline-none rounded-md focus:ring-gray-300" name="" id="" value={templateText}></textarea>
+                        </div>
+                    </div>
 
+                    <div className="rounded-md border border-gray-200 p-4">
+
+                    </div>
                 </div>
                 <div className="w-1/4">
                     <div className="rounded-xl border border-gray-200 mt-6">
@@ -124,6 +153,29 @@ export default function TemplateEdit() {
                             {tokenInfo.map((token, idx) => (
                                 <Token key={idx} text={token} />
                             ))}
+                        </div>
+                    </div>
+                    <div className="rounded-xl border border-gray-200 mt-6">
+                        <p className="p-4 flex gap-2 items-center"><AtomIcon className="w-4" />AI Assistant</p>
+                        <div className="px-4 py-4">
+                            <p>Tone</p>
+                        </div>
+                        <div className="flex flex-col p-4 gap-2">
+                            <button className="border border-gray-200 hover:bg-gray-200 rounded-xl">Rewrite</button>
+                            <button className="border border-gray-200 hover:bg-gray-200 rounded-xl">Shorten</button>
+                            <button className="border border-gray-200 hover:bg-gray-200 rounded-xl">Make Friendlier</button>
+
+                        </div>
+                    </div>
+                    <div className="rounded-xl border border-gray-200 mt-6 p-4">
+                        <p>A/B Testing</p>
+                        <div className="flex justify-between items-center pt-6">
+                            <span>Varient A</span>
+                            <button className="rounded-xl bg-gray-900 text-gray-50 px-2 text-sm">Active</button>
+                        </div>
+                        <div className="p-2">
+
+                            <button className="flex w-full gap-1 rounded-xl border justify-center items-center border-gray-200 hover:bg-gray-200"><Plus className="w-3" /> Create Varient B</button>
                         </div>
                     </div>
                 </div>
