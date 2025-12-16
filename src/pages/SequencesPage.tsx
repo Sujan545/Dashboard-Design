@@ -1,9 +1,56 @@
-import { LightbulbIcon, Settings, Timer } from "lucide-react";
+import { CircleAlert, LightbulbIcon, LineChart, Settings, Timer } from "lucide-react";
+import { Mail, MessageCircle, PhoneCall } from "lucide-react";
 
+import Timeline from "../components/sequence/SequenceTimeline";
 
-
+interface buttonProps {
+    isLast: Boolean;
+}
+function MyButton({ isLast }: buttonProps) {
+    return (
+        <button className="border border-gray-200 px-2 py-1 text-sm rounded-lg hover:bg-gray-200">
+            + {isLast ? "Final" : "Add"} Step
+        </button>
+    )
+}
 export default function Sequences() {
-
+    const templateSteps = [
+        {
+            title: "Initial Notice",
+            icon: Mail,
+            text: "Automated email with payment link and personalized message",
+            days: 0,
+            category: "Email",
+        },
+        {
+            title: "SMS Reminder",
+            icon: MessageCircle,
+            text: "Text message reminder with short, actionable content",
+            days: 3,
+            category: "SMS",
+        },
+        {
+            title: "Follow-up Email",
+            icon: Mail,
+            text: "Automated email with payment link and personalized message",
+            days: 7,
+            category: "Email",
+        },
+        {
+            title: "Voice Call",
+            icon: PhoneCall,
+            text: "Automated voice call with interactive options",
+            days: 14,
+            category: "Voice",
+        },
+        {
+            title: "Final Notice",
+            icon: Mail,
+            text: "Automated email with payment link and personalized message",
+            days: 21,
+            category: "Email",
+        },
+    ];
 
     return (
         <>
@@ -18,20 +65,63 @@ export default function Sequences() {
                 </div>
             </div>
             <div className="flex gap-4 w-full">
+
                 <div className="flex flex-col w-3/4">
                     <div className="rounded-md  border border-gray-200 mt-6 p-6">
-
-
-
+                        <div className="flex gap-2 items-center pb-2">
+                            <LineChart className="w-4" />
+                            <p>Sequence Timeline</p>
+                        </div>
+                        {templateSteps.map((card, index) => (
+                            <>
+                                <Timeline
+                                    title={card.title}
+                                    text={card.text}
+                                    icon={card.icon}
+                                    days={card.days}
+                                    category={card.category}
+                                    number={index + 1}
+                                />
+                                <div className="flex items-center justify-center">
+                                    <MyButton isLast={index + 1 === templateSteps.length} />
+                                </div>
+                            </>
+                        ))}
                     </div>
-
-
                     <div className="rounded-md  border border-gray-200 mt-6 p-6">
-
-
-
-
-
+                        <div className="flex gap-2 items-center">
+                            <CircleAlert className="w-4" />
+                            <p>Exit Criteria</p>
+                        </div>
+                        <div className="gap-2 flex flex-col ">
+                            <div className="flex rounded-lg m-4 border border-gray-200  justify-between items-center p-2 px-4">
+                                <div>
+                                    <p>Payment Received</p>
+                                    <span className="text-xs text-gray-400">Stop sequence when payment is confirmed</span>
+                                </div>
+                                <div>
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div className="flex rounded-lg mx-4 border border-gray-200  justify-between items-center p-2 px-4">
+                                <div>
+                                    <p>Customer Reply</p>
+                                    <span className="text-xs text-gray-400">Pause sequence when customer responds</span>
+                                </div>
+                                <div>
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div className="flex rounded-lg m-4 border border-gray-200  justify-between items-center p-2 px-4">
+                                <div>
+                                    <p>Manual Stop</p>
+                                    <span className="text-xs text-gray-400">Allow manual intervention to stop sequence</span>
+                                </div>
+                                <div>
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -39,17 +129,27 @@ export default function Sequences() {
                     <div className="rounded-xl border border-gray-200 mt-6">
                         <p className="flex gap-1 p-4 "><Timer className="w-4" /> Channel Mix</p>
                         <div className="flex justify-between px-4">
-                            <span>Email</span>
+                            <div className="flex items-center gap-2">
+                              <div className="rounded-full w-2 h-2 bg-blue-700"></div>
+                                <span>Email</span>
+                            </div>
                             <span> 65%</span>
                         </div>
                         <div className="flex justify-between py-2 px-4">
-                            <span>SMS</span>
+                            <div className="flex items-center gap-2">
+                              <div className="rounded-full w-2 h-2 bg-green-700"></div>
+                                <span>Sms</span>
+                            </div>
                             <span> 65%</span>
                         </div>
                         <div className="flex justify-between  px-4">
-                            <span>Voice</span>
+                             <div className="flex items-center gap-2">
+                              <div className="rounded-full w-2 h-2 bg-purple-700"></div>
+                                <span>Voice</span>
+                            </div>
                             <span> 65%</span>
                         </div>
+                          <hr className="my-3 mx-4 border-gray-200" />
                         <div className="flex justify-between p-4">
 
                             <span>Ai Recomended</span>
@@ -75,8 +175,12 @@ export default function Sequences() {
                             <span>Avg. Days to Payment</span>
                             <span>8.5</span>
                         </div>
+                        <hr className="my-3 mx-4 border-gray-200" />
                         <div className="rounded-md bg-green-100 px-2 py-2 m-2 flex flex-col">
-                            <span>Optimized</span>
+                            <div className="flex items-center gap-2 ">
+                                <div className="rounded-full w-2 h-2 bg-green-700"></div>
+                                <span>Optimized</span>
+                            </div>
                             <span className="text-xs">This sequence is optimized for your historical performance data </span>
                         </div>
                     </div>
@@ -101,9 +205,9 @@ export default function Sequences() {
                     <div className="rounded-xl border border-gray-200  px-4">
                         <p className=" py-4 "> Quick Start</p>
                         <div className="flex flex-col gap-2  ">
-                        <button className="rounded-xl border border-gray-200 hover:bg-gray-300 w-full px-2 text-start">Standard 30-Day</button>
-                        <button className="rounded-xl border border-gray-200 hover:bg-gray-300 w-full px-2 text-start">Standard 30-Day</button>
-                        <button className="rounded-xl border border-gray-200 hover:bg-gray-300 w-full px-2 mb-4 text-start">Standard 30-Day</button>
+                            <button className="rounded-xl border border-gray-200 hover:bg-gray-300 w-full px-2 text-start">Standard 30-Day</button>
+                            <button className="rounded-xl border border-gray-200 hover:bg-gray-300 w-full px-2 text-start">Standard 30-Day</button>
+                            <button className="rounded-xl border border-gray-200 hover:bg-gray-300 w-full px-2 mb-4 text-start">Standard 30-Day</button>
                         </div>
                     </div>
                 </div>
