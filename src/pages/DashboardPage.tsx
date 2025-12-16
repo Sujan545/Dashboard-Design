@@ -1,8 +1,8 @@
-import { ArrowRight, ArrowUpNarrowWide, BookAIcon, BookTemplate, DollarSign, LucideFileExclamationPoint, Mail, MessageCircle, MessageCircleCodeIcon, PhoneCall, Share, SigmaSquare, Text, Timer, User, Users2 } from "lucide-react";
-import DisplayCard from "../components/shared/DisplayCard";
-import Action from "../components/shared/ActionCard";
-import Activity from "../components/shared/ActivityCard";
-import Performance from "../components/shared/PerformanceCard";
+import { ArrowRight, ArrowUpNarrowWide, BookAIcon, BookTemplate, DollarSign, Mail, MessageCircle,  PhoneCall, Share,  Timer, User, Users2 } from "lucide-react";
+import DisplayCard from "../components/dashboard/DisplayCard";
+import Action from "../components/dashboard/ActionCard";
+import Activity from "../components/dashboard/ActivityCard";
+import Performance from "../components/dashboard/PerformanceCard";
 
 
 export default function Dashboard() {

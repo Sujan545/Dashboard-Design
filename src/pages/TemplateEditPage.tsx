@@ -1,6 +1,7 @@
 import { AtomIcon, Mail, MessageCircle, PhoneCallIcon, Plus, type LucideIcon } from "lucide-react"
 import { useState } from "react";
 
+
 interface ButtonProps {
     button: string;
     icon: LucideIcon;
@@ -38,7 +39,17 @@ function Button({ button, icon: Icon, activeCategory, setActiveCategory }: Butto
 
 export default function TemplateEdit() {
 
+    const templateText: string = `Dear {{First Name}},
+    We hope this message finds you well. We wanted to remind you that your payment of {{Amount}} was due on {{Due Date}}.\n
+    Please click the link below to make your payment:\n
+    {{Payment Link}}\n
+    If you have any questions, please don't hesitate to contact us.\n
+    Best regards,\n
+    Collections Team`;
+
     const [activeCategory, setActiveCategory] = useState("Email");
+    const [messageBody, setMessageBody] = useState(templateText);
+    const [value, setValue] = useState<number>(0.44);
     const tokenInfo = [
         "First Name",
         "Last Name",
@@ -63,17 +74,7 @@ export default function TemplateEdit() {
             icon: PhoneCallIcon
         }
     ];
-  const templateText = `Dear {{First Name}},
 
-We hope this message finds you well. We wanted to remind you that your payment of {{Amount}} was due on {{Due Date}}.
-
-Please click the link below to make your payment:
-{{Payment Link}}
-
-If you have any questions, please don't hesitate to contact us.
-
-Best regards,
-Collections Team`;
     return (
         <>
             <div className="flex justify-between items-center">
@@ -87,7 +88,6 @@ Collections Team`;
                 </div>
             </div>
             <div className="flex gap-6 w-full">
-
                 <div className="flex flex-col gap-6 w-3/4">
                     <div className="rounded-md  border border-gray-200 mt-6 p-6">
                         <p>Template Details</p>
@@ -138,12 +138,18 @@ Collections Team`;
                         </div>
                         <div>
                             <p className="py-4">Message Body</p>
-                            <textarea  className="w-full h-40 p-2 focus:ring-2 focus:outline-none rounded-md focus:ring-gray-300" name="" id="" value={templateText}></textarea>
+                            <textarea
+                                className="w-full h-40 p-2 focus:ring-2 focus:outline-none rounded-md focus:ring-gray-300"
+                                name="" id="" value={templateText}
+                                onChange={(e) => setMessageBody(e.target.value)}></textarea>
                         </div>
                     </div>
 
                     <div className="rounded-md border border-gray-200 p-4">
-
+                        <p>Preview</p>
+                        <div className="rounded-md bg-gray-100 p-2">
+                            {messageBody}
+                        </div>
                     </div>
                 </div>
                 <div className="w-1/4">
@@ -159,6 +165,22 @@ Collections Team`;
                         <p className="p-4 flex gap-2 items-center"><AtomIcon className="w-4" />AI Assistant</p>
                         <div className="px-4 py-4">
                             <p>Tone</p>
+                            <div className="flex justify-between text-xs pt-2">
+                                <span>Casual</span>
+                                <span>Formal</span>
+                            </div>
+                            <div className="flex flex-col gap-2 w-full">
+                                {/* Range Input */}
+                                <input
+                                    type="range"
+                                    min={0}
+                                    max={1}
+                                    step={0.1}
+                                    value={value}
+                                    onChange={(e) => setValue(Number(e.target.value))}
+                                    className="w-full accent-blue-600 cursor-pointer"
+                                />
+                            </div>
                         </div>
                         <div className="flex flex-col p-4 gap-2">
                             <button className="border border-gray-200 hover:bg-gray-200 rounded-xl">Rewrite</button>

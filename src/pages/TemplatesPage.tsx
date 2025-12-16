@@ -7,7 +7,7 @@ type Category = "All" | "Friendly" | "Firm" | "Custom" | "Final Notice";
 
 export default function Templates() {
     const [search, setSearch] = useState("");
-    const [activeCategory, setActiveCategory] = useState<Category>("Custom");
+    const [activeCategory, setActiveCategory] = useState<Category>("All");
     const navigate =useNavigate();
 
     const categories: Category[] = [
