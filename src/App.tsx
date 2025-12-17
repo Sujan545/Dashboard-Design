@@ -5,7 +5,8 @@ import Dashboard from './pages/DashboardPage'
 import MainLayout from './layout/MainLayout'
 import Templates from './pages/TemplatesPage'
 import TemplateEdit from './pages/TemplateEditPage'
-import Sequences from './pages/SEquencesPage'
+import Sequences from './pages/SequencesPage'
+import Payment from './pages/PaymentPortalPage'
 
 
 
@@ -21,6 +22,7 @@ function App() {
     <Route path='templates' element={<Templates/>}/>
     <Route path='template/edit' element={<TemplateEdit/>}/>
     <Route path='sequences' element={<Sequences/>}/>
+    <Route path='payments' element={<Payment/>}/>
 
   </Route>
  </Routes>
