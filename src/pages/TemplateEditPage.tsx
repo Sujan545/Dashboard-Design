@@ -1,5 +1,6 @@
 import { AtomIcon, Mail, MessageCircle, PhoneCallIcon, Plus, type LucideIcon } from "lucide-react"
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 interface ButtonProps {
@@ -50,6 +51,7 @@ export default function TemplateEdit() {
     const [activeCategory, setActiveCategory] = useState("Email");
     const [messageBody, setMessageBody] = useState(templateText);
     const [value, setValue] = useState<number>(0.44);
+    const navigate= useNavigate();
     const tokenInfo = [
         "First Name",
         "Last Name",
@@ -83,7 +85,10 @@ export default function TemplateEdit() {
                     <span className="text-gray-500">Create and customize your collection message templates</span>
                 </div>
                 <div className="flex gap-3 items-center justify-center">
-                    <button className=" border border-gray-200 hover:bg-gray-300 rounded-md  items-center p-2 text-sm gap-2">Cancel</button>
+                    <button 
+                    onClick={()=>navigate(-1)}
+                    className=" border border-gray-200 hover:bg-gray-300 rounded-md  items-center p-2 text-sm gap-2">
+                        Cancel</button>
                     <button className="bg-black text-white rounded-md  items-center p-2 text-sm gap-2 ">Save Template</button>
                 </div>
             </div>
