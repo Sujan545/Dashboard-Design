@@ -12,17 +12,16 @@ interface TransactionProps {
 };
 export default function RecentPayment({ title, icon: Icon, status, amount, method, time }: TransactionProps) {
     const colorCheck: Record<string, string> = {
-        failed: "bg-red-200",
-        completed: " bg-green-200",
-        pending: "bg-yellow-200",
+        Failed: "red-200",
+        Completed: "green-200",
+        Pending: "yellow-200",
     };
-    const bgColor = colorCheck[status] ?? "bg-blue-100"
+    const color = colorCheck[status] ?? "bg-blue-100"
+    console.log(color)
     return (
         <div className="mt-4 flex items-center justify-between rounded-md border border-gray-200 p-3">
             <div className="flex items-center gap-3">
-                <div className={`${bgColor} rounded-xl p-2 text-white`}>
-                    <Icon />
-                </div>
+                    <Icon className={`text-`+color} />
                 <div className="flex flex-col">
                     <span className="text-sm font-medium">{title}</span>
                     <span className="text-xs text-gray-500">
@@ -36,7 +35,7 @@ export default function RecentPayment({ title, icon: Icon, status, amount, metho
                 </span>
 
                 <span
-                    className={`rounded-full px-2 py-0.5 text-xs capitalize ${bgColor}`}
+                    className={`rounded-full px-2 py-0.5 text-xs capitalize bg-${color}`}
                 >
                     {status}
                 </span>

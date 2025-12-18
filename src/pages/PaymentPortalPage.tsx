@@ -17,7 +17,7 @@ export default function Payment() {
         {
             title: "Acme Corp",
             icon: CheckCircle, // ✅ completed icon
-            status: "completed",
+            status: "Completed",
             amount: 2450,
             method: "Card",
             time: "2 hours ago",
@@ -25,7 +25,7 @@ export default function Payment() {
         {
             title: "Smith LLC",
             icon: Clock, // 🕒 pending icon
-            status: "pending",
+            status: "Pending",
             amount: 1250,
             method: "ACH",
             time: "5 hours ago",
@@ -33,7 +33,7 @@ export default function Payment() {
         {
             title: "Johnson Inc",
             icon: CheckCircle,
-            status: "completed",
+            status: "Completed",
             amount: 875,
             method: "Card",
             time: "1 day ago",
@@ -41,7 +41,7 @@ export default function Payment() {
         {
             title: "Wilson Co",
             icon: XCircle, // ❌ failed icon
-            status: "failed",
+            status: "Failed",
             amount: 3200,
             method: "ACH",
             time: "2 days ago",
