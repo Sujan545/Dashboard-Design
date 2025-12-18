@@ -7,6 +7,7 @@ import Templates from './pages/TemplatesPage'
 import TemplateEdit from './pages/TemplateEditPage'
 import Sequences from './pages/SequencesPage'
 import Payment from './pages/PaymentPortalPage'
+import Complaince from './pages/CompliancePage'
 
 
 
@@ -23,6 +24,7 @@ function App() {
     <Route path='template/edit' element={<TemplateEdit/>}/>
     <Route path='sequences' element={<Sequences/>}/>
     <Route path='payments' element={<Payment/>}/>
+    <Route path='compliance' element={<Complaince/>}/>
 
   </Route>
  </Routes>
