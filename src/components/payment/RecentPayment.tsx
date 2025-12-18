@@ -17,7 +17,6 @@ export default function RecentPayment({ title, icon: Icon, status, amount, metho
         Pending: "yellow-200",
     };
     const color = colorCheck[status] ?? "bg-blue-100"
-    console.log(color)
     return (
         <div className="mt-4 flex items-center justify-between rounded-md border border-gray-200 p-3">
             <div className="flex items-center gap-3">
@@ -33,7 +32,6 @@ export default function RecentPayment({ title, icon: Icon, status, amount, metho
                 <span className="text-sm font-semibold">
                     ${amount.toLocaleString()}
                 </span>
-
                 <span
                     className={`rounded-full px-2 py-0.5 text-xs capitalize bg-${color}`}
                 >

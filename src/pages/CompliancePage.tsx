@@ -19,7 +19,7 @@ function Compliance() {
 
 export default function Complaince() {
 
-    const [activeTab, setActiveTab] = useState("output");
+    const [activeTab, setActiveTab] = useState("optout");
     return (
 
         <>
@@ -34,11 +34,11 @@ export default function Complaince() {
                         className="bg-black text-white rounded-md flex items-center p-2 text-sm gap-2 "><Notebook className="h-4 w-4" />Compliance Report</button>
                 </div>
             </div>
-            <div className="flex gap-2 mt-6">
+            <div className="flex gap-2 mt-6 py-1 w-[38%] px-1 rounded-lg bg-gray-300 text-sm">
                 <button
-                    className={`px-4 py-2 rounded-full ${activeTab === "optout"
-                        ? "bg-black text-white"
-                        : "bg-gray-200 text-gray-700"
+                    className={`px-2 py-1 rounded-sm ${activeTab === "optout"
+                        ? "bg-white"
+                        : "bg-gray-300"
                         }`}
                     onClick={() => setActiveTab("optout")}
                 >
@@ -46,9 +46,9 @@ export default function Complaince() {
                 </button>
 
                 <button
-                    className={`px-4 py-2 rounded-full ${activeTab === "consent"
-                        ? "bg-black text-white"
-                        : "bg-gray-200 text-gray-700"
+                    className={`px-2 py-1 rounded-sm ${activeTab === "consent"
+                        ? " bg-white"
+                        : "bg-gray-300"
                         }`}
                     onClick={() => setActiveTab("consent")}
                 >
@@ -56,9 +56,9 @@ export default function Complaince() {
                 </button>
 
                 <button
-                    className={`px-4 py-2 rounded-full ${activeTab === "compliance-checker"
-                        ? "bg-black text-white"
-                        : "bg-gray-200 text-gray-700"
+                    className={`px-1 py-1 rounded-sm ${activeTab === "compliance-checker"
+                        ? "bg-white"
+                        : "bg-gray-300 "
                         }`}
                     onClick={() => setActiveTab("compliance-checker")}
                 >
