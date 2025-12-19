@@ -62,8 +62,8 @@ export default function Overview() {
 
     return (
         <>
-            <div className="flex flex-col gap-4">
-                <div className="flex gap-6 w-full">
+            <div className="flex flex-col gap-2">
+                <div className="flex gap-2 w-full">
                     {cardInfo.map((card) => (
                         <DisplayCard
                             title={card.title}
@@ -103,7 +103,7 @@ export default function Overview() {
                     </div>
                 </div>
 
-                <div className="flex gap-4 ">
+                <div className="flex gap-2 ">
                     <div className="rounded-md border w-full border-gray-200 p-4">
                         {performanceInfo.map((item) => (
                             <Performance

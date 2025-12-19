@@ -67,8 +67,7 @@ export default function Payment() {
                 </div>
                 < div className="flex w-1/2 flex-col">
                     <PaymentPreview />
-                    <div className="w-full mt-6 rounded-md border border-gray-200 p-4 bg-white">
-
+                    <div className="w-full mt-6 rounded-md border border-gray-200 p-4">
                         <div className="flex items-center justify-between">
                             <p className="font-medium text-sm">Recent Payments</p>
                             <button className="flex items-center gap-2 rounded-md border border-gray-200 px-2 py-1 text-sm hover:bg-gray-300">
@@ -87,8 +86,6 @@ export default function Payment() {
                             />
                         ))}
                     </div>
-
-
                 </div >
             </div >
         </>

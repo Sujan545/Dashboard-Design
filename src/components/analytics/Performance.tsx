@@ -49,7 +49,7 @@ export default function Performance() {
                 <p>Template Placement Leaderboard</p>
                 <div className="p-4">
                     <table className="w-full text-left text-sm">
-                        <thead className="border-b text-gray-600">
+                        <thead className="border-b text-gray-800">
                             <tr className="border-b border-gray-200">
                                 <th className="py-3">Template</th>
                                 <th>Conversion Rate</th>

@@ -113,7 +113,7 @@ export default function Dashboard() {
                 </div>
 
             </div>
-            <div className="flex gap-6 w-full">
+            <div className="flex gap-2 w-full">
                 {cardInfo.map((card) => (
                     <DisplayCard
                         title={card.title}
@@ -124,7 +124,7 @@ export default function Dashboard() {
                 ))}
             </div>
 
-            <div className="flex gap-6 py-4">
+            <div className="flex gap-2 py-4">
 
                 <div className="border border-gray-300 w-1/2 max-h-1/2 rounded-xl">
                     <p className="p-6">Channel Performance</p>
@@ -159,7 +159,7 @@ export default function Dashboard() {
             </div>
             <div className="rounded-xl border border-gray-300 w-full p-4">
                 <p>Quick Action</p>
-                <div className="flex w-full gap-6 items-center justify-center mt-8">
+                <div className="flex w-full gap-4 items-center justify-center mt-8">
                     {actionInfo.map((card) =>
                         <Action
                             title={card.title}

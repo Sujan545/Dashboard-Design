@@ -64,7 +64,7 @@ export default function Sequences() {
                     <button className="bg-black text-white rounded-md p-2 text-sm ">Save Sequences</button>
                 </div>
             </div>
-            <div className="flex gap-4 w-full">
+            <div className="flex gap-2 w-full">
 
                 <div className="flex flex-col w-3/4">
                     <div className="rounded-md  border border-gray-200 mt-6 p-6">

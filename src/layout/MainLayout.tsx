@@ -3,12 +3,17 @@ import Sidebar from "../components/sidebar/Sidebar";
 
 export default function MainLayout() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden">
+      {/* Sidebar - fixed, no scroll */}
       <Sidebar />
-      <main className="flex-1 p-5">
-        <Outlet />
+
+      {/* Right side */}
+      <main className="flex-1 flex flex-col">
+        {/* Scrollable content only */}
+        <div className="flex-1 overflow-y-auto p-5 bg-gray-100">
+          <Outlet />
+        </div>
       </main>
     </div>
   );
 }
-

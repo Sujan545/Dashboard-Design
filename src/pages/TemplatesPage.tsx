@@ -76,7 +76,7 @@ export default function Templates() {
                 </div>
 
             </div>
-            <div className="flex items-center gap-3 mt-6 w-full">
+            <div className="flex items-center gap-2 mt-6 w-full">
 
                 {/* Search Input */}
                 <div className="relative flex-1">
@@ -129,7 +129,7 @@ export default function Templates() {
                 </div>
 
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-2">
                 {filteredTemplates.map((card) => (
                     <Template
                         title={card.title}
