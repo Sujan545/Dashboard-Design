@@ -28,9 +28,9 @@ export default function Setting() {
                     <p className="text-gray-500">Configure your account and system preferences </p>
                     </div>
                 </div>
-                      <div className="flex gap-2 mt-6 py-1 w-[32%] px-1 rounded-lg bg-gray-300 text-sm">
+                      <div className="flex gap-2 mt-6 py-1 w-[29%] px-1 rounded-lg bg-gray-300 text-sm">
                 <button
-                    className={`px-3 py-1 rounded-sm ${activeTab === "channels"
+                    className={`px-2 py-1 rounded-sm ${activeTab === "channels"
                         ? "bg-white"
                         : "bg-gray-300"
                         }`}
@@ -40,7 +40,7 @@ export default function Setting() {
                 </button>
 
                 <button
-                    className={`px-3 py-1 rounded-sm ${activeTab === "organization"
+                    className={`px-2 py-1 rounded-sm ${activeTab === "organization"
                         ? " bg-white"
                         : "bg-gray-300"
                         }`}
@@ -50,7 +50,7 @@ export default function Setting() {
                 </button>
 
                 <button
-                    className={`px-4 py-1 rounded-sm ${activeTab === "security"
+                    className={`px-2 py-1 rounded-sm ${activeTab === "security"
                         ? "bg-white"
                         : "bg-gray-300 "
                         }`}
@@ -59,7 +59,7 @@ export default function Setting() {
                     Security
                 </button>
                 <button
-                    className={`px-3 py-1 rounded-sm ${activeTab === "api-keys"
+                    className={`px-2 py-1 rounded-sm ${activeTab === "api-keys"
                         ? "bg-white"
                         : "bg-gray-300 "
                         }`}
