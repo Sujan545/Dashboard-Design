@@ -107,9 +107,9 @@ export default function ConsentTracking() {
     ];
 
     const colorCheck: Record<string, string> = {
-        "Consent": "green-200",
-        "Pending": "yellow-200",
-        "No Consent": "orange-200",
+        "Consent": "bg-green-200",
+        "Pending": "bg-yellow-200",
+        "No Consent": "bg-orange-200",
     }
 
     return (
@@ -141,19 +141,19 @@ export default function ConsentTracking() {
                                         </td>
 
                                         <td>
-                                            <span className={`rounded-full px-2 py-0.5 text-xs ${"bg-" + colorCheck[item.email]}`}>
+                                            <span className={`rounded-full px-2 py-0.5 text-xs ${colorCheck[item.email]}`}>
                                                 {item.email}
                                             </span>
                                         </td>
 
                                         <td >
-                                            <span className={`rounded-full  px-2 py-0.5 text-xs  ${"bg-" + colorCheck[item.sms]}`}>
+                                            <span className={`rounded-full  px-2 py-0.5 text-xs  ${colorCheck[item.sms]}`}>
                                                 {item.sms}
                                             </span>
                                         </td>
 
                                         <td >
-                                            <span className={`rounded-full  px-2 py-0.5 text-xs ${"bg-" + colorCheck[item.voice]}`}>
+                                            <span className={`rounded-full  px-2 py-0.5 text-xs ${colorCheck[item.voice]}`}>
                                                 {item.voice}
                                             </span>
                                         </td>
