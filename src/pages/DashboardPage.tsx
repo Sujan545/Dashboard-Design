@@ -101,7 +101,7 @@ export default function Dashboard() {
     return (
 
         <>
-            <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center">
 
                 <div>
                     <h1 className="font-semibold text-2xl">Dashboard</h1>

@@ -9,6 +9,7 @@ import Sequences from './pages/SequencesPage'
 import Payment from './pages/PaymentPortalPage'
 import Complaince from './pages/CompliancePage'
 import Analytics from './pages/AnalyticsPage'
+import Setting from './pages/SettingPage'
 
 
 
@@ -27,6 +28,7 @@ function App() {
     <Route path='payments' element={<Payment/>}/>
     <Route path='compliance' element={<Complaince/>}/>
     <Route path='analytics' element={<Analytics/>}/>
+    <Route path='settings' element={<Setting/>}/>
 
   </Route>
  </Routes>
