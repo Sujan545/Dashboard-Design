@@ -24,20 +24,21 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="w-64 h-screen bg-white border-r border-gray-300 flex flex-col">
+    <aside className="w-64 h-screen bg-white border-r border-gray-300 flex flex-col justify-between">
+      <div>
       {/* 🔒 Fixed Header */}
       <div className="flex gap-2 items-center p-4 font-bold text-lg border-b border-gray-300 shrink-0">
         <div className="bg-gray-900 p-2 text-gray-50 rounded-lg">
           <Building />
         </div>
-        <div>
+        <div className="font-normal text-md">
           CollectPro
           <p className="text-xs text-gray-500">Collection Platform</p>
         </div>
       </div>
 
       {/* 🔽 Scrollable Navigation */}
-      <nav className="flex-1 overflow-y-auto py-3">
+      <nav className="justify-between overflow-y-auto py-4">
         {items.map(({ label, path, icon: Icon }) => (
           <NavLink
             key={path}
@@ -46,16 +47,22 @@ export default function Sidebar() {
               `flex items-center gap-3 px-4 py-2 mx-2 rounded-md text-sm font-medium transition
      whitespace-nowrap
      ${isActive
-                ? "bg-gray-900 text-white shadow-[inset_4px_0_0_0_#111827]"
-                : "text-gray-700 hover:bg-gray-100"
+                ? "bg-gray-100"
+                : ""
               }`
             }
           >
             <Icon size={18} className="shrink-0" />
-            <span>{label}</span>
+            <span className="font-normal">{label}</span>
           </NavLink>
-        ))}
+        ))}          
+
       </nav>
+      </div>
+        <div className="flex gap-4 items-center justify-start p-4 border-t border-t-gray-300">
+          <div className="p-2 rounded-full bg-gray-200"><p className="text-sm">JD</p></div>
+          <div className="flex flex-col gap-0"><p className="text-sm">John Doe</p> <p className="text-gray-500 text-xs">Admin</p></div>
+        </div>
     </aside>
   );
 }

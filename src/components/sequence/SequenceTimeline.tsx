@@ -35,32 +35,33 @@ export default function Timeline({ title, text, days, category, number, icon: Ic
 
                         <div className="flex flex-col gap-1">
                             <div className="flex gap-2 items-center">
-                                <p className="font-semibold">{title}</p>
+                                <p className="font-normal text-md">{title}</p>
 
                                 <button className="rounded-lg border border-gray-200 px-2 text-xs">
                                     {category}
                                 </button>
                                 {days > 0 && (
-                                    <TimerReset className="w-4 text-gray-400" />
+                                    <div className="rounded-lg  font-medium px-2 text-xs bg-gray-200/50 items-center flex gap-2 ">
+                                        <TimerReset className="w-4 text-gray-400" />
+                                        <p>
+                                            wait {days} days
+                                        </p>
+                                    </div>
                                 )}
-                                {days > 0 && (
-                                    <button className="rounded-lg border border-gray-200 px-2 text-xs bg-gray-100">
-                                        wait {days} days
-                                    </button>
-                                )}
+
                             </div>
 
-                            <p className="text-gray-500 text-sm">{text}</p>
+                            <p className="text-gray-500 text-xs">{text}</p>
                         </div>
                     </div>
 
                     {/* RIGHT ACTIONS */}
                     <div className="ml-auto flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <button className="p-1 hover:bg-gray-100 rounded-md">
+                        <button className="p-1 hover:bg-gray-300 rounded-md">
                             <Settings className="w-4" />
                         </button>
 
-                        <button className="rounded-xl text-sm text-red-500 hover:bg-gray-200 hover:text-gray-900 px-2 ">
+                        <button className="rounded-xl text-sm text-red-500 hover:bg-gray-300 hover:text-gray-900 px-2 ">
                             Remove
                         </button>
                     </div>

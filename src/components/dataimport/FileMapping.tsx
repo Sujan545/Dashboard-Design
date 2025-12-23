@@ -34,7 +34,7 @@ function RequiredFieldDropdown({ value, onChange }: Props) {
             <button
                 type="button"
                 onClick={() => setOpen(!open)}
-                className="w-full flex items-center justify-between rounded-md bg-gray-200 px-3 py-2 text-sm hover:bg-gray-300"
+                className="w-full flex items-center justify-between rounded-md bg-gray-200/50 px-3 py-2 text-sm"
             >
                 <span className="truncate">
                     {value ?? "Select field"}
@@ -44,7 +44,7 @@ function RequiredFieldDropdown({ value, onChange }: Props) {
 
             {/* Dropdown */}
             {open && (
-                <div className="absolute z-20 mt-1 w-full rounded-md border bg-white shadow-lg">
+                <div className="absolute z-20 mt-1 w-full rounded-md border bg-gray-100 border-gray-200 shadow-lg">
                     {availableFields.map((field) => (
                         <button
                             key={field}
@@ -52,7 +52,7 @@ function RequiredFieldDropdown({ value, onChange }: Props) {
                                 onChange(field);
                                 setOpen(false);
                             }}
-                            className="flex w-full items-center justify-between px-3 py-2 text-sm hover:bg-gray-100"
+                            className="flex w-full items-center justify-between px-3 py-2 text-sm hover:bg-gray-200"
                         >
                             <span>{field}</span>
                             {value === field && (
@@ -83,10 +83,10 @@ function Card({ field, status, sample }: DetectedColumn) {
             <div className="p-2 rounded-md border border-gray-200 ">
                 <div className="flex flex-col ">
                     <div className="flex justify-between items-center">
-                        <p>{field}</p>
-                        <button className="rounded-md bg-gray-300  text-xs px-2 ">{status}</button>
+                        <p className="font-medium">{field}</p>
+                        <button className="rounded-md bg-gray-200  text-xs px-2 ">{status}</button>
                     </div>
-                    <p className="text-sm text-gray-500">Sample: {sample}</p>
+                    <p className="text-xs text-gray-500">Sample: {sample}</p>
                 </div>
 
             </div>
@@ -155,10 +155,10 @@ export default function FieldMapping() {
     return (
         <>
             <div className="border border-gray-200 flex flex-col rounded-md p-4 gap-2">
-                <p className=" ">Field Mapping</p>
+                <p className=" font-normal text-md">Field Mapping</p>
                 <div className="flex gap-4">
                     <div className="flex py-4 flex-col gap-2 w-1/2">
-                        <p className="">Deleted Columns</p>
+                        <p className="font-normal text-md">Deleted Columns</p>
                         {detectedColumns.map((item) => (
                             <Card
                                 field={item.field}
@@ -223,10 +223,10 @@ export default function FieldMapping() {
                     </div>
                 </div>
                 <div>
-                    <p className="py-4 ">Data Preview (First 3 Rowa) </p>
+                    <p className="py-4 font-normal text-md ">Data Preview (First 3 Rows) </p>
                     <div className="overflow-x-auto">
                         <table className="w-full text-left text-sm border border-gray-300 border-collapse">
-                            <thead className="bg-gray-200">
+                            <thead className="bg-gray-200/50">
                                 <tr>
                                     <th className="border border-gray-300 py-3 px-3">Customer Name</th>
                                     <th className="border border-gray-300 px-3">Email</th>

@@ -13,12 +13,12 @@ export default function Activity({ title, value, text, time }: ActivityProps) {
             
                 <div className=" flex justify-between items-center px-4 py-2 ">
                     <div>
-                        <p className="font-semibold">{title}</p>
-                        <p className="text-gray-500 text-sm ">{text} sent</p>
+                        <p className="font-medium">{title}</p>
+                        <p className="text-gray-500 text-xs ">{text} sent</p>
                     </div>
                     <div>
-                        <p className="font-semibold">{value}</p>
-                        <p className="text-gray-500">{time}</p>
+                        <p className="font-medium">{value}</p>
+                        <p className="text-gray-500 text-xs">{time}</p>
                     </div>
                 </div>
             

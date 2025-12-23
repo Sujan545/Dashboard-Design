@@ -22,13 +22,13 @@ const bgColor=colorCheck[title] ?? "bg-blue-100"
                         <Icon />
                         </div>
                         <div>
-                        <p className="font-semibold">{title}</p>
-                        <p className="text-gray-500 text-sm ">{value} sent</p>
+                        <p className="font-medium">{title}</p>
+                        <p className="text-gray-500 text-xs ">{value} sent</p>
                         </div>
                     </div>
                     <div>
-                        <p className="font-semibold">{percentage}</p>
-                        <p className="text-gray-500">response rate</p>
+                        <p className="font-medium">{percentage}</p>
+                        <p className="text-gray-500 text-xs">response rate</p>
                     </div>
                 </div>
         </>

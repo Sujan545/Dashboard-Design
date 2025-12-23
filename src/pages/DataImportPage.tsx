@@ -95,8 +95,8 @@ export default function DataImport() {
 
         <>
             <div className="max-w-4xl mx-auto p-6">
-                <h1 className="text-2xl font-semibold mb-2">Data Import Wizard</h1>
-                <p className="text-gray-500 mb-6">
+                <h1 className="text-lg font-medium">Data Import Wizard</h1>
+                <p className="text-gray-500 text-sm mb-6">
                     Import your customer data and set up collection campaigns
                 </p>
 
@@ -107,7 +107,7 @@ export default function DataImport() {
                     <button
                         disabled={step === 1}
                         onClick={() => setStep(step - 1)}
-                        className="px-4 py-2 border rounded-md disabled:opacity-50"
+                        className="px-4 py-1 rounded-md bg-gray-200 hover:bg-gray-300  disabled:opacity-50"
                     >
                         ← Previous
                     </button>
@@ -115,7 +115,7 @@ export default function DataImport() {
                     <button
                         disabled={step === 4}
                         onClick={() => setStep(step + 1)}
-                        className="px-4 py-2 bg-black text-white rounded-md disabled:opacity-50"
+                        className="px-4 py-1 bg-black text-white rounded-md disabled:opacity-50"
                     >
                         Next →
                     </button>

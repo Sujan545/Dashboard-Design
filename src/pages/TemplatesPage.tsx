@@ -66,13 +66,13 @@ export default function Templates() {
             <div className="flex justify-between items-center">
 
                 <div>
-                    <h1 className="font-semibold text-2xl">Template Library</h1>
-                    <p className="text-gray-500">Create and manage your collection message templates </p>
+                    <h1 className="font-medium text-lg">Template Library</h1>
+                    <p className="text-gray-500 text-sm">Create and manage your collection message templates </p>
                 </div>
                 <div className="flex gap-2">
                     <button
                     onClick={()=>navigate("/template/edit")}
-                    className="bg-black text-white rounded-md flex items-center p-2 text-sm gap-2 "><PlusIcon className="h-4 w-4" />Create Template</button>
+                    className="bg-black text-white rounded-md flex items-center px-2 py-1 text-sm gap-2 "><PlusIcon className="h-4 w-4" />Create Template</button>
                 </div>
 
             </div>
@@ -89,7 +89,7 @@ export default function Templates() {
                         placeholder="Search..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                        className="w-full pl-10 pr-4 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
                     />
                 </div>
 
@@ -112,15 +112,15 @@ export default function Templates() {
                     </button>
                 </div>
                         */}
-                <div className="flex gap-2 font-semibold">
+                <div className="flex gap-2 font-normal text-sm">
                     {categories.map((cat) => (
                         <button
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
-                            className={`px-4 py-2 rounded-lg border text-sm transition
-        ${activeCategory === cat
+                            className={`px-4 py-1 rounded-md text-sm transition
+                                     ${activeCategory === cat
                                     ? "bg-black text-white"
-                                    : "hover:bg-gray-100"
+                                    : "hover:bg-gray-300 border border-gray-200 "
                                 }`}
                         >
                             {cat}

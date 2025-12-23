@@ -104,12 +104,12 @@ export default function Dashboard() {
         <div className="flex justify-between items-center">
 
                 <div>
-                    <h1 className="font-semibold text-2xl">Dashboard</h1>
-                    <p className="text-gray-500">Overview of your collections performance </p>
+                    <h1 className="font-medium text-lg">Dashboard</h1>
+                    <p className="text-gray-500 text-sm">Overview of your collections performance </p>
                 </div>
                 <div className="flex gap-2">
-                    <button className="border rounded-md p-2 hover:bg-gray-400 text-sm">Export Report</button>
-                    <button className="bg-black text-white rounded-md p-2 text-sm ">New Campagin</button>
+                    <button className="border rounded-md border-gray-200 px-2 py-1 hover:bg-gray-300 text-sm">Export Report</button>
+                    <button className="bg-black text-white rounded-md px-2 py-1 text-sm ">New Campagin</button>
                 </div>
 
             </div>

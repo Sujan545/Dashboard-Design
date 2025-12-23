@@ -18,7 +18,7 @@ export default function DisplayCard ({amount, title, percentage, icon:Icon}:disp
                 <Icon size={16} className="text-gray-500" />
             </div>
             <div>
-                <h2 className="font-bold ">{amount}</h2>
+                <h2 className="font-semibold text-md ">{amount}</h2>
                 <span className={`text-sm flex gap-2 ${percentage[0] == '+' ? "text-green-500" : "text-red-500" }`}>
                     {percentage[0] == '+' ? <ArrowUpRightIcon className="w-5 h-5"/> : <ArrowDownLeftIcon className="w-5 h-5"/>}
                     {percentage} from last month  
