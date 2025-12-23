@@ -1,18 +1,33 @@
+import { File, Import, Upload } from "lucide-react";
 
 
 
 export default function UploadFile() {
     return (
         <>
-            <div className="border rounded-xl p-6">
-                <p className="font-medium mb-4">Upload Your Data File</p>
+            <div className="border border-gray-200 flex flex-col rounded-md p-4 gap-2">
+                <p className="font-medium mb-4 flex gap-2 "><Upload className="w-4" />Upload Your Data File</p>
 
-                <div className="border-2 border-dashed rounded-lg p-10 text-center text-gray-500">
-                    Drag and drop your file here
-                    <br />
-                    <button className="mt-4 px-4 py-2 border rounded-md">
-                        Browse Files
-                    </button>
+                <div className="border-gray-200 border-2 flex justify-center hover:border-gray-400 border-dashed rounded-md p-10  text-gray-500">
+
+                    <div className="flex flex-col gap-2 items-center">
+                        <File size={50} />
+                        <p>
+                            Drag and drop your file here
+                        </p>
+                        <button className=" px-4 border border-gray-200 hover:bg-gray-300 rounded-md">
+                            Browse Files
+                        </button>
+                    </div>
+                </div>
+                <div className="p-2 bg-gray-100 items-center rounded-md flex justify-between">
+                    <div>
+                        <p>Need a template?</p>
+                        <p className="text-sm text-gray-500">Download our sample CSV file to get started</p>
+                    </div>
+
+                    <button className="flex gap-2 rounded-md border text-sm border-gray-300 hover:bg-gray-300 px-2 items-center"><Import />Download Template</button>
+
                 </div>
             </div>
         </>
