@@ -1,5 +1,5 @@
 import { AtomIcon, Mail, MessageCircle, PhoneCallIcon, Plus, type LucideIcon } from "lucide-react"
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -51,7 +51,7 @@ export default function TemplateEdit() {
     const [activeCategory, setActiveCategory] = useState("Email");
     const [messageBody, setMessageBody] = useState(templateText);
     const [value, setValue] = useState<number>(0.44);
-    const navigate= useNavigate();
+    const navigate = useNavigate();
     const tokenInfo = [
         "First Name",
         "Last Name",
@@ -62,6 +62,7 @@ export default function TemplateEdit() {
         "Payment Link",
         "Phone"
     ];
+    
     const buttonInfo = [
         {
             button: "Email",
@@ -85,9 +86,9 @@ export default function TemplateEdit() {
                     <span className="text-gray-500">Create and customize your collection message templates</span>
                 </div>
                 <div className="flex gap-3 items-center justify-center">
-                    <button 
-                    onClick={()=>navigate(-1)}
-                    className=" border border-gray-200 hover:bg-gray-300 rounded-md  items-center p-2 text-sm gap-2">
+                    <button
+                        onClick={() => navigate(-1)}
+                        className=" border border-gray-200 hover:bg-gray-300 rounded-md  items-center p-2 text-sm gap-2">
                         Cancel</button>
                     <button className="bg-black text-white rounded-md  items-center p-2 text-sm gap-2 ">Save Template</button>
                 </div>
@@ -145,14 +146,14 @@ export default function TemplateEdit() {
                             <p className="py-4">Message Body</p>
                             <textarea
                                 className="w-full h-40 p-2 focus:ring-2 focus:outline-none rounded-md focus:ring-gray-300"
-                                name="" id="" value={templateText}
+                                name="" id="" value={messageBody}
                                 onChange={(e) => setMessageBody(e.target.value)}></textarea>
                         </div>
                     </div>
 
                     <div className="rounded-md border border-gray-200 p-4">
                         <p>Preview</p>
-                        <div className="rounded-md bg-gray-100 p-2">
+                        <div className="rounded-md bg-gray-100 p-3 whitespace-pre-wrap">
                             {messageBody}
                         </div>
                     </div>

@@ -10,6 +10,7 @@ import Payment from './pages/PaymentPortalPage'
 import Complaince from './pages/CompliancePage'
 import Analytics from './pages/AnalyticsPage'
 import Setting from './pages/SettingPage'
+import DataImport from './pages/DataImportPage'
 
 
 
@@ -29,6 +30,7 @@ function App() {
     <Route path='compliance' element={<Complaince/>}/>
     <Route path='analytics' element={<Analytics/>}/>
     <Route path='settings' element={<Setting/>}/>
+    <Route path='data-import' element={<DataImport/>}/>
 
   </Route>
  </Routes>
