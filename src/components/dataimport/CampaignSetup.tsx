@@ -1,5 +1,5 @@
-import { Calendar,Timer } from "lucide-react";
-import { Mail, MessageSquare, Phone } from "lucide-react";
+import { Calendar, Timer, Mail, MessageSquare, Phone } from "lucide-react";
+import type  { ReactNode } from "react";
 
 interface SequenceStep {
     id: number;
@@ -10,30 +10,46 @@ interface SequenceStep {
     status: "Scheduled";
 }
 
-
 function Card({ id, title, channel, day, description, status }: SequenceStep) {
 
-    const channelIconMap: Record<string, JSX.Element> = {
-        Email: <Mail className="rounded-md  p-3 h-12 w-12 bg-blue-100 text-blue-600" />,
-        SMS: <MessageSquare className="rounded-md h-12 w-12 p-3 bg-green-100 text-green-600" />,
-        Voice: <Phone className="rounded-md h-12 w-12 p-3 bg-purple-100 text-purple-600" />,
+    const channelIconMap: Record<SequenceStep["channel"], ReactNode> = {
+        Email: (
+            <Mail className="rounded-md p-3 h-12 w-12 bg-blue-100 text-blue-600" />
+        ),
+        SMS: (
+            <MessageSquare className="rounded-md p-3 h-12 w-12 bg-green-100 text-green-600" />
+        ),
+        Voice: (
+            <Phone className="rounded-md p-3 h-12 w-12 bg-purple-100 text-purple-600" />
+        ),
     };
+
     return (
-        <div className="flex gap-4 items-center">
+        <div key={id} className="flex gap-4 items-center">
             <div title={channel}>
                 {channelIconMap[channel]}
-
             </div>
-            <div key={id} className="flex justify-between items-center w-full">
-                <div >
-                    <p className="flex gap-3 text-sm ">{title}<button className="rounded-lg border border-gray-200 px-2 text-sm">Day {day}</button></p>
+
+            <div className="flex justify-between items-center w-full">
+                <div>
+                    <p className="flex gap-3 text-sm">
+                        {title}
+                        <span className="rounded-lg border border-gray-200 px-2 text-sm">
+                            Day {day}
+                        </span>
+                    </p>
                     <p className="text-xs text-gray-500">{description}</p>
                 </div>
-                <button className="flex gap-2 rounded-lg hover:bg-gray-300 px-2 text-sm items-center"><Timer className="w-4" />{status}</button>
+
+                <button className="flex gap-2 rounded-lg hover:bg-gray-300 px-2 text-sm items-center">
+                    <Timer className="w-4" />
+                    {status}
+                </button>
             </div>
         </div>
-    )
+    );
 }
+
 
 export default function CampaignSetup() {
 
