@@ -1,7 +1,6 @@
 import { CheckCircle, XCircle } from "lucide-react";
 
 
-
 function StatusIcon({ status }: { status: "complete" | "missing" }) {
     return status === "complete" ? (
         <CheckCircle className="h-5 w-5 text-green-600" />
@@ -12,7 +11,6 @@ function StatusIcon({ status }: { status: "complete" | "missing" }) {
 
 
 export default function Validation() {
-
 
     const customers = [
         {
@@ -54,7 +52,7 @@ export default function Validation() {
                             <div className="flex justify-between items-center">
                                 <div>
                                     <p className="text-md">Row 15: Invalid phone number format</p>
-                                    <p className="text-sm text-gray-500">Field: Phone, Value: "123-456"</p>
+                                    <p className="text-xs text-gray-500">Field: Phone, Value: "123-456"</p>
                                 </div>
                                 <button className="rounded-md border hover:bg-gray-300 text-xs border-gray-200 px-2">Fix</button>
                             </div>
@@ -63,7 +61,7 @@ export default function Validation() {
                             <div className="flex justify-between items-center">
                                 <div>
                                     <p className="text-md">Row 23: Missing email address</p>
-                                    <p className="text-sm text-gray-500">Field: Phone, Value: "123-456"</p>
+                                    <p className="text-xs text-gray-500">Field: Phone, Value: "123-456"</p>
                                 </div>
                                 <button className="rounded-md border text-xs hover:bg-gray-300 border-gray-200 px-2">Fix</button>
                             </div>
@@ -72,7 +70,7 @@ export default function Validation() {
                             <div className="flex justify-between items-center">
                                 <div>
                                     <p className="text-md">Row 31: Non-numeric amount</p>
-                                    <p className="text-sm text-gray-500">Field: Phone, Value: "123-456"</p>
+                                    <p className="text-xs text-gray-500">Field: Phone, Value: "123-456"</p>
                                 </div>
                                 <button className=" text-xs rounded-md border hover:bg-gray-300 border-gray-200 px-2">Fix</button>
                             </div>
@@ -83,7 +81,7 @@ export default function Validation() {
                 </div>
                 <div>
                     <p className="py-4 ">Data Preview (First 20 Rows) </p>
-                     <div className="overflow-x-auto">
+                    <div className="overflow-x-auto">
                         <table className="w-full text-left text-sm border border-gray-300 border-collapse">
                             <thead className="bg-gray-200/50">
                                 <tr>
@@ -99,7 +97,7 @@ export default function Validation() {
                             <tbody>
                                 {customers.map((item) => (
                                     <tr key={item.email}>
-                                        <td className="border border-gray-200 py-3 px-3"><StatusIcon status={item.status}/></td>
+                                        <td className="border border-gray-200 py-3 px-3"><StatusIcon status={item.status as "complete" | "missing"} /></td>
                                         <td className="border border-gray-200 py-3 px-3">{item.customer_name}</td>
                                         <td className="border border-gray-200 px-3">{item.email}</td>
                                         <td className="border border-gray-200 px-3">{item.phone}</td>

@@ -1,6 +1,5 @@
 import { CircleAlert, LightbulbIcon, LineChart, Settings, Timer } from "lucide-react";
 import { Mail, MessageCircle, PhoneCall } from "lucide-react";
-
 import Timeline from "../components/sequence/SequenceTimeline";
 
 interface buttonProps {

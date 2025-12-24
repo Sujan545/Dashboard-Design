@@ -1,7 +1,6 @@
 
 import { Settings, TimerReset, type LucideIcon } from "lucide-react"
 
-type Channel = "Email" | "SMS" | "Voice";
 
 interface PerformanceProps {
     title: string;
@@ -9,7 +8,7 @@ interface PerformanceProps {
     text: string;
     days: number;
     number: number;
-    category: Channel;
+    category: string;
 
 }
 

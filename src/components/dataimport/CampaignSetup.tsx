@@ -1,4 +1,4 @@
-import { Calendar, Car, Timer } from "lucide-react";
+import { Calendar,Timer } from "lucide-react";
 import { Mail, MessageSquare, Phone } from "lucide-react";
 
 interface SequenceStep {
@@ -13,7 +13,7 @@ interface SequenceStep {
 
 function Card({ id, title, channel, day, description, status }: SequenceStep) {
 
-    const channelIconMap: Record<Channel, JSX.Element> = {
+    const channelIconMap: Record<string, JSX.Element> = {
         Email: <Mail className="rounded-md  p-3 h-12 w-12 bg-blue-100 text-blue-600" />,
         SMS: <MessageSquare className="rounded-md h-12 w-12 p-3 bg-green-100 text-green-600" />,
         Voice: <Phone className="rounded-md h-12 w-12 p-3 bg-purple-100 text-purple-600" />,

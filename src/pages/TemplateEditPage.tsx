@@ -1,5 +1,5 @@
 import { AtomIcon, Mail, MessageCircle, PhoneCallIcon, Plus, type LucideIcon } from "lucide-react"
-import { useState ,useEffect} from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
