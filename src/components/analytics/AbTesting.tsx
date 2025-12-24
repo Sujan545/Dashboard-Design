@@ -12,17 +12,17 @@ interface ABTestVariant {
 function VarientCard({ variant, title, conversionRate, sent, isWinner }: ABTestVariant) {
     return (
         <>
-            <div className={`w-1/2 rounded-md border ${isWinner?"bg-green-50" :"bg-white"} border-gray-200 p-2`}>
+            <div className={`w-1/2 rounded-md border ${isWinner ? "bg-green-50" : "bg-white"} border-gray-200 p-2`}>
                 <div className="flex justify-between items-center ">
-                    <span>Varient {variant}</span>
+                    <span className="font-medium text-sm">Varient {variant}</span>
                     {isWinner &&
-                        <button className="rounded-md bg-green-400 text-sm text-white px-2">Winner</button>
+                        <button className="rounded-md bg-green-400 text-xs py-0.5 text-white px-2">Winner</button>
                     }
                 </div>
-                <span className="text-sm text-gray-500">{title}</span>
+                <span className="text-xs text-gray-500">{title}</span>
                 <div className="flex justify-between items-center">
-                    <span className="text-sm">Conversion:{conversionRate}%</span>
-                    <span className="text-sm">Sent:{sent}</span>
+                    <span className="text-xs">Conversion:{conversionRate}%</span>
+                    <span className="text-xs">Sent:{sent}</span>
                 </div>
             </div>
         </>
@@ -70,9 +70,12 @@ export default function AbTesting() {
     return (
         <>
             <div className="border border-gray-200 rounded-md mt-6 p-4">
-                <p className="py-2">A/B Testing Result</p>
+                <p className="py-2 font-normal text-md ">A/B Testing Result</p>
                 <div className="p-4 rounded-md border w-full border-gray-200">
-                    <p className="py-2">Subjectline A/B</p>
+                    <div className="flex justify-between items-center">
+                        <p className="py-2 font-normal text-md">Subject Line A/B</p>
+                        <button className="rounded-xl py-0.5 bg-gray-900 text-white px-2 text-xs ">Significant</button>
+                    </div>
                     <div className="flex gap-2 w-full">
 
                         {abTestResults.map((item) => (
@@ -89,9 +92,12 @@ export default function AbTesting() {
             </div>
 
             <div className="border border-gray-200 rounded-md mt-6 p-4">
-                <p className="py-2">A/B Sent Result</p>
+                <p className="py-2 text-md font-normal">A/B Sent Result</p>
                 <div className="p-4 rounded-md border w-full border-gray-200">
-                    <p className="py-2">Subjectline A/B</p>
+                   <div className="flex justify-between items-center">
+                        <p className="py-2 font-normal text-md">Subject Line A/B</p>
+                        <button className="rounded-xl py-0.5 bg-gray-900 text-white px-2 text-xs ">Significant</button>
+                    </div>
                     <div className="flex gap-2 w-full">
 
                         {abSentResults.map((item) => (

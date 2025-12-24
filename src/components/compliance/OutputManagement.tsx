@@ -61,12 +61,12 @@ export default function Output() {
         <>
             <div className=" flex flex-col gap-4">
 
-                <div className="rounded-md border border-gray-200 flex flex-col gap-4 p-4 mt-4">
+                <div className="rounded-md border border-gray-200 flex font-normal flex-col gap-4 p-4 mt-6">
                     <div className="flex justify-between items-center ">
-                        <p className="flex gap-2 "><Option className="w-4" />Opt-Out List</p>
-                        <div className="flex gap-2">
-                            <button className="flex gap-2 border border-gray-200 rounded-md hover:bg-gray-300 px-2"> <Import className="w-4" /> Import </button>
-                            <button className="flex gap-2 border border-gray-200 rounded-md hover:bg-gray-300 px-2"> <LucideImport className="w-4" /> Export CSV </button>
+                        <p className="flex text-md  gap-2 "><Option className="w-4" />Opt-Out List</p>
+                        <div className="flex font-medium gap-2">
+                            <button className="flex gap-2 border border-gray-200 py-0.5 text-sm rounded-md hover:bg-gray-300 px-2"> <Import className="w-4" /> Import </button>
+                            <button className="flex gap-2 border border-gray-200 text-sm py-0.5 rounded-md hover:bg-gray-300 px-2"> <LucideImport className="w-4" /> Export CSV </button>
                         </div>
                     </div>
                     <div className="flex gap-2  ">
@@ -81,7 +81,7 @@ export default function Output() {
                                 type="text"
                                 placeholder="Search..."
 
-                                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                className="w-full pl-10 pr-4 py-1 bg-gray-200/50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
                             />
                         </div>
 
@@ -90,7 +90,7 @@ export default function Output() {
                             onChange={(e) =>
                                 setFilter(e.target.value as OptOutType | "All")
                             }
-                            className=" border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+                            className=" border border-gray-300 rounded-lg px-2 py-1  text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
                         >
                             <option value="All">All Types</option>
                             <option value="Email">Email</option>
@@ -101,7 +101,7 @@ export default function Output() {
 
                     <div className="overflow-x-auto">
                         <table className="w-full text-left text-sm">
-                            <thead className="border-b text-gray-600">
+                            <thead className="border-b text-sm font-medium">
                                 <tr className="border-b border-gray-200">
                                     <th className="py-3">Contact</th>
                                     <th>Type</th>
@@ -115,14 +115,14 @@ export default function Output() {
                                 {filteredData.map((item) => (
                                     <tr
                                     key={item.id}
-                                        className="border-b border-gray-200 last:border-none"
+                                        className="border-b font-normal border-gray-200 text-sm last:border-none"
                                     >
                                         <td className="py-3 font-medium">
                                             {item.contact}
                                         </td>
 
                                         <td>
-                                            <span className="rounded-full border px-2 py-0.5 text-xs">
+                                            <span className="rounded-lg border border-gray-200  px-2 py-0.5 text-xs">
                                                 {item.type}
                                             </span>
                                         </td>
@@ -136,7 +136,7 @@ export default function Output() {
                                         </td>
 
                                         <td className="">
-                                            <button className="text-sm font-medium border border-gray-200 text-red-500 hover:text-gray-800 hover:bg-gray-300 px-2 rounded-md">
+                                            <button className="text-sm  text-red-500 hover:text-gray-800 hover:bg-gray-300 px-2 py-0.5 rounded-lg">
                                                 Remove
                                             </button>
                                         </td>
@@ -158,17 +158,17 @@ export default function Output() {
                     </div>
                 </div>
 
-                <div className="rounded-md border border-gray-200 p-4 gap-3 flex flex-col ">
-                    <p>Add to Opt-Out List</p>
-                    <div className="flex gap-2 items-center w-full">
+                <div className="rounded-md border font-normal border-gray-200 p-4 gap-3 flex flex-col ">
+                    <p className="text-md ">Add to Opt-Out List</p>
+                    <div className="flex gap-2 mt-3 items-center w-full">
                         <input
-                            className="p-2 w-1/3 bg-gray-100 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                            className="px-2 py-1 w-1/3 bg-gray-200/50 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
                             type="text"
                             placeholder="Enter template name" />
 
 
                         <select
-                            className="border border-gray-300 w-1/3 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+                            className="border border-gray-300 w-1/3 rounded-lg px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
                         >
                             <option value="all types">All Types</option>
                             <option value="email">Email</option>
@@ -176,7 +176,7 @@ export default function Output() {
                             <option value="voice">Voice</option>
                         </select>
 
-                        <button className="rounded-md w-1/3 bg-gray-900 text-gray-50 p-2 ">Add to Opt-Out</button>
+                        <button className="rounded-md w-1/3 bg-gray-900 text-gray-50 px-2 py-1 text-sm font-medium">Add to Opt-Out</button>
                     </div>
                 </div>
 

@@ -171,7 +171,7 @@ export default function Sequences() {
                             <span>Expected Collection Rate</span>
                             <span> 65%</span>
                         </div>
-                        <div className="flex text-sm justify-between py-2 px-4">
+                        <div className="flex text-sm ljustify-between py-2 px-4">
                             <span>Avg. Days to Payment</span>
                             <span>8.5</span>
                         </div>

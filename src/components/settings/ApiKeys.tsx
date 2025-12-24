@@ -33,39 +33,39 @@ function Card({ id, name, apiKey, createdAt, status, lastUsed }: ApiKeyItem) {
     const color = bgColorChecker[status];
     return (
         <>
-            <div className="rounded-md gap-2 flex flex-col  px-2 py-4 border border-gray-200 ">
-                <p className="flex gap-2">{name}<button className={`text-sm px-2 ${color}  rounded-xl`} >{status}</button></p>
+            <div className="rounded-md font-normal gap-2 flex flex-col  px-2 py-4 border border-gray-200 ">
+                <p className="flex text-sm  gap-2">{name}<button className={`text-xs py-0.5 px-2 ${color}  rounded-lg`} >{status}</button></p>
                 <div className="flex justify-between items-center">
                     {/* Left */}
-                    <div className="flex gap-2 items-center font-mono text-sm">
-                        <p className="bg-gray-200 rounded-md px-2">{maskedKey}</p>
+                    <div className="flex gap-2 items-center text-sm">
+                        <p className="bg-gray-200/50 rounded-md px-2">{maskedKey}</p>
                         {/* Eye toggle */}
                         <button
                             onClick={() => setShowHalf(!showHalf)}
-                            className="text-gray-500 hover:text-gray-800 rounded-md hover:bg-gray-300 px-2 "
+                            className="text-gray-500 hover:text-gray-800 rounded-md py-0.5 hover:bg-gray-300 px-2 "
                         >
                             {showHalf ? <Eye className="w-4" /> : <EyeOff className="w-4" />}
                         </button>
                         {/* Copy */}
                         <button
                             onClick={handleCopy}
-                            className="text-gray-500 hover:text-gray-800 rounded-md hover:bg-gray-300 px-2"
+                            className="text-gray-500 hover:text-gray-800 py-0.5 rounded-md hover:bg-gray-300 px-2"
                         >
                             <Copy className="w-4" />
                         </button>
                     </div>
                     {/* Right */}
                     <div className="flex gap-2">
-                        <button className="border border-gray-200 px-2 gap-2 flex items-center hover:bg-gray-100 rounded-md">
+                        <button className="border text-xs py-0.5  border-gray-200 px-2 gap-2 flex items-center hover:bg-gray-100 rounded-md">
                             <ConeIcon className="w-4" />
                             Regenerate
                         </button>
-                        <button className="text-red-600 hover:bg-gray-300 rounded-md px-2">
+                        <button className="text-red-600 py-0.5 text-xs  hover:bg-gray-300 hover:text-gray-900 rounded-md px-2">
                             Delete
                         </button>
                     </div>
                 </div>
-                <p className="text-sm text-gray-500">
+                <p className="text-xs text-gray-500">
                     Created:{createdAt}• Last used: {lastUsed}</p>
             </div>
         </>
@@ -104,9 +104,9 @@ export default function ApiKeys() {
 
     return (
         <>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col font-normal gap-2">
                 <div className="rounded-md border flex flex-col border-gray-200 gap-3 p-6 mt-6">
-                    <p className="flex gap-2 items-center"><AppWindow className="w-4" /> API Keys</p>
+                    <p className="flex gap-2 text-md  items-center"><AppWindow className="w-4" /> API Keys</p>
                     {apiKeysData.map((item) => (
                         <Card
                             id={item.id}
@@ -117,18 +117,18 @@ export default function ApiKeys() {
                             lastUsed={item.lastUsed}
                         />
                     ))}
-                    <button className="bg-gray-900 text-white rounded-md w-full text-center">Create New API Key</button>
+                    <button className="bg-gray-900 text-white rounded-md text-sm py-1  w-full text-center">Create New API Key</button>
                 </div>
                 <div className="rounded-md border flex flex-col gap-4 border-gray-200 p-6 ">
-                    <p>API Documentation</p>
+                    <p className="text-md ">API Documentation</p>
                     <p className="text-sm text-gray-500 ">Use our REST API to integrate CollectPro with your existing systems.</p>
                     <div className="flex gap-2 ">
-                        <button className="rounded-md border border-gray-200 text-left px-2 w-full hover:bg-gray-300">View API Documentation</button>
-                        <button className="rounded-md border border-gray-200 px-2 w-full text-left hover:bg-gray-300">Download Postman Collection</button>
+                        <button className="rounded-md border border-gray-200 text-left px-2 py-1 w-full hover:bg-gray-300">View API Documentation</button>
+                        <button className="rounded-md border border-gray-200 px-2 w-full py-1 text-left hover:bg-gray-300">Download Postman Collection</button>
                     </div>
-                    <div className="bg-gray-200 rounded-md p-2">
-                        <p>Rate Limits</p>
-                        <div className="text-gray-500 py-2 ">
+                    <div className="bg-gray-200/50 rounded-md p-2">
+                        <p className="text-sm py-2">Rate Limits</p>
+                        <div className="text-gray-500 text-xs flex flex-col gap-2 ">
                             <p>• 1000 requests per hour for standard endpoints</p>
                             <p>• 100 requests per hour for bulk operations</p>
                             <p>• 10 requests per minute for authentication</p>

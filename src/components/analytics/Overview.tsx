@@ -74,7 +74,7 @@ export default function Overview() {
                     ))}
                 </div>
                 <div className="rounded-md border border-gray-200 p-6">
-                    <h2 className="text-lg font-semibold mb-6">Conversion Funnel</h2>
+                    <h2 className="text-md font-normal mb-6">Conversion Funnel</h2>
                     <div className="space-y-5">
                         {funnelData.map((step) => (
                             <>
@@ -105,6 +105,7 @@ export default function Overview() {
 
                 <div className="flex gap-2 ">
                     <div className="rounded-md border w-full border-gray-200 p-4">
+                        <p className="font-normal text-md mb-4">Channel Performance</p>
                         {performanceInfo.map((item) => (
                             <Performance
                                 title={item.title}
@@ -117,7 +118,7 @@ export default function Overview() {
                     </div>
 
                     <div className="rounded-md border flex w-full border-gray-200 p-4">
-                        <p>Collection Trends</p>
+                        <p className="font-normal text-md">Collection Trends</p>
                         <div className="flex justify-center gap-2  items-center">
                             <ChartArea/>
                             <p className="text-gray-500"> Chart Visualization would be here</p>

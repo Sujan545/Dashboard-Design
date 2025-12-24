@@ -1,4 +1,4 @@
-import {  Mail, MessageCircle, Phone, type LucideIcon } from "lucide-react";
+import { Mail, MessageCircle, Phone, type LucideIcon } from "lucide-react";
 
 
 
@@ -12,16 +12,16 @@ interface ConsentSummary {
     icon: LucideIcon;
 }
 function Card({ channel, openrate, clickrate, conversionrate, bouncerate, icon: Icon }: ConsentSummary) {
-  const colorCheck: Record<string, string> = {
-    Email: "text-blue-700",
-    SMS: " text-green-700",
-    Voice: "text-purple-700",
-};
-const bgColor=colorCheck[channel] ?? "bg-blue-100"
-    
+    const colorCheck: Record<string, string> = {
+        Email: "text-blue-700",
+        SMS: " text-green-700",
+        Voice: "text-purple-700",
+    };
+    const bgColor = colorCheck[channel] ?? "bg-blue-100"
+
     return (
-        <div className="rounded-md border border-gray-200 w-1/3 p-4">
-            <p className=" flex gap-2"><Icon className={`${bgColor}`} />{channel} Performance</p>
+        <div className=" flex flex-col gap-2  font-normal rounded-md border border-gray-200 w-1/3 p-4">
+            <p className=" flex gap-2 text-md"><Icon className={`${bgColor}`} />{channel} Performance</p>
             <div className="flex justify-between pt-4 ">
                 <span className="text-sm">Open Rate</span>
                 <span className="">{openrate}</span>

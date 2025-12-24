@@ -24,18 +24,18 @@ export default function RecentPayment({ title, icon: Icon, status, amount, metho
     };
     const txtColor = Check[status] ?? "bg-blue-100"
     return (
-        <div className="mt-4 flex items-center justify-between rounded-md border border-gray-200 p-3">
+        <div className="mt-4 flex font-normal items-center justify-between rounded-md border border-gray-200 p-3">
             <div className="flex items-center gap-3">
                     <Icon className={`${txtColor}`} />
                 <div className="flex flex-col">
-                    <span className="text-sm font-medium">{title}</span>
+                    <span className="text-md font-medium">{title}</span>
                     <span className="text-xs text-gray-500">
                         {method} • {time}
                     </span>
                 </div>
             </div>
             <div className="flex flex-col items-center gap-3">
-                <span className="text-sm font-semibold">
+                <span className="text-sm font-medium">
                     ${amount.toLocaleString()}
                 </span>
                 <span

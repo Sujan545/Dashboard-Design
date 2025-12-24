@@ -46,10 +46,10 @@ export default function Performance() {
     return (
         <>
             <div className="rounded-md border border-gray-200 mt-6 p-4">
-                <p>Template Placement Leaderboard</p>
+                <p className="font-normal text-md">Template Placement Leaderboard</p>
                 <div className="p-4">
                     <table className="w-full text-left text-sm">
-                        <thead className="border-b text-gray-800">
+                        <thead className="border-b font-medium text-gray-800">
                             <tr className="border-b border-gray-200">
                                 <th className="py-3">Template</th>
                                 <th>Conversion Rate</th>
@@ -84,7 +84,7 @@ export default function Performance() {
                                     </td>
 
                                     <td className="">
-                                        <button className={` ${statusCheck[item.status]}" text-sm font-medium px-2 rounded-md`}>
+                                        <button className={` ${statusCheck[item.status]}" text-xs px-2 rounded-md`}>
                                             {item.status}
                                         </button>
                                     </td>

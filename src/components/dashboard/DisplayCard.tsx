@@ -14,11 +14,11 @@ export default function DisplayCard ({amount, title, percentage, icon:Icon}:disp
             <div className="flex flex-col gap-6">
 
             <div className="flex items-center justify-between ">
-                <h4>{title}</h4>
+                <p className="font-normal text-md">{title}</p>
                 <Icon size={16} className="text-gray-500" />
             </div>
             <div>
-                <h2 className="font-semibold text-md ">{amount}</h2>
+                <p className="font-medium text-md ">{amount}</p>
                 <span className={`text-sm flex gap-2 ${percentage[0] == '+' ? "text-green-500" : "text-red-500" }`}>
                     {percentage[0] == '+' ? <ArrowUpRightIcon className="w-5 h-5"/> : <ArrowDownLeftIcon className="w-5 h-5"/>}
                     {percentage} from last month  

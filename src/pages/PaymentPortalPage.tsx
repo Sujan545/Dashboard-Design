@@ -52,11 +52,11 @@ export default function Payment() {
         <>
             <div className="flex justify-between items-center">
                 <div>
-                    <h1 className="font-semibold text-2xl">Payment Portal</h1>
-                    <p className="text-gray-500">Configure payment methods and manage transactions </p>
+                    <h1 className="font-medium text-lg">Payment Portal</h1>
+                    <p className="text-gray-500 text-xs">Configure payment methods and manage transactions </p>
                 </div>
                 <div className="flex gap-2 items-center">
-                    <button className="bg-black text-white rounded-md p-2 text-sm flex gap-2 items-center"><Eye className="w-4" /> Preview Portal</button>
+                    <button className="bg-black text-white rounded-md px-2 py-1 text-sm flex gap-2 items-center"><Eye className="w-4" /> Preview Portal</button>
                 </div>
             </div>
             <div className="flex gap-2 w-full">
@@ -69,7 +69,7 @@ export default function Payment() {
                     <PaymentPreview />
                     <div className="w-full mt-6 rounded-md border border-gray-200 p-4">
                         <div className="flex items-center justify-between">
-                            <p className="font-medium text-sm">Recent Payments</p>
+                            <p className=" text-sm">Recent Payments</p>
                             <button className="flex items-center gap-2 rounded-md border border-gray-200 px-2 py-1 text-sm hover:bg-gray-300">
                                 <Share className="h-4 w-4" />
                                 Export

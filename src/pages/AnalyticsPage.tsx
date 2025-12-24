@@ -29,12 +29,12 @@ export default function Analytics() {
         <>
             <div className="flex justify-between items-center">
                 <div>
-                    <h1 className="font-normal text-2xl">Analytics & Reportin</h1>
-                    <p className="text-gray-500">Track performance and optimize your collection campaigns</p>
+                    <h1 className="font-medium text-lg">Analytics & Reportin</h1>
+                    <p className="text-gray-500 text-sm">Track performance and optimize your collection campaigns</p>
                 </div>
                 <div className="flex items-center gap-2">
-                    <button className="border rounded-md px-3 py-1 transition hover:bg-gray-400 text-sm border-gray-200 flex gap-2"> <Filter className="w-4" />Filter</button>
-                    <button className="border rounded-md px-3 py-1 trransition hover:bg-gray-400 text-sm border-gray-200 flex gap-2"><Import className="w-4" />Export</button>
+                    <button className="border rounded-md px-2  transition hover:bg-gray-300 text-sm border-gray-200 flex gap-2"> <Filter className="w-4" />Filter</button>
+                    <button className="border rounded-md px-2 trransition hover:bg-gray-300 text-sm border-gray-200 flex gap-2"><Import className="w-4" />Export</button>
                 </div>
             </div>
             <div className="flex gap-2 mt-6">
@@ -43,7 +43,7 @@ export default function Analytics() {
                         key={label}
                         onClick={() => setActive(label)}
                         className={`
-            rounded-md border text-sm px-3 py-1 transition
+            rounded-md border text-sm px-1 transition 
             ${active === label
                                 ? "bg-gray-900 text-white border-gray-900"
                                 : "border-gray-200 hover:bg-gray-300"
@@ -54,11 +54,11 @@ export default function Analytics() {
                     </button>
                 ))}
             </div>
-            <div className="flex gap-2 mt-6 py-1 font-normal w-1/3 px-1 rounded-lg bg-gray-300 text-sm">
+            <div className="flex gap-2 mt-6 py-1  font-normal w-1/3 px-1 rounded-lg bg-gray-200 text-sm">
                 <button
                     className={`px-3 py-1 rounded-sm ${activeTab === "overview"
                         ? "bg-white"
-                        : "bg-gray-300"
+                        : "bg-gray-200"
                         }`}
                     onClick={() => setActiveTab("overview")}
                 >
@@ -67,7 +67,7 @@ export default function Analytics() {
                 <button
                     className={`px-3 py-1 rounded-sm ${activeTab === "performance"
                         ? " bg-white"
-                        : "bg-gray-300"
+                        : "bg-gray-200"
                         }`}
                     onClick={() => setActiveTab("performance")}
                 >
@@ -77,7 +77,7 @@ export default function Analytics() {
                 <button
                     className={`px-3 py-1 rounded-sm ${activeTab === "channels"
                         ? "bg-white"
-                        : "bg-gray-300 "
+                        : "bg-gray-200 "
                         }`}
                     onClick={() => setActiveTab("channels")}
                 >
@@ -86,7 +86,7 @@ export default function Analytics() {
                 <button
                     className={`px-3 py-1 rounded-sm ${activeTab === "ab-testing"
                         ? "bg-white"
-                        : "bg-gray-300 "
+                        : "bg-gray-200 "
                         }`}
                     onClick={() => setActiveTab("ab-testing")}
                 >

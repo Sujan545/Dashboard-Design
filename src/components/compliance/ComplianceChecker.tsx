@@ -13,8 +13,8 @@ interface ComplianceItem {
 
 function Card({ title, icon: Icon, status, description }: ComplianceItem) {
     const colorCheck: Record<string, string> = {
-        passed: "green-700",
-        warning: "yellow-700",
+        passed: " text-green-600 ",
+        warning: " text-yellow-600 ",
     };
     const color = colorCheck[status] ?? "bg-blue-100"
     const statusCheck: Record<string, string> = {
@@ -23,9 +23,9 @@ function Card({ title, icon: Icon, status, description }: ComplianceItem) {
     };
     const result = statusCheck[status]
     return (
-        <div className="mt-4 flex items-center justify-between rounded-md border border-gray-200 p-3">
+        <div className="mt-4 font-normal flex items-center justify-between rounded-md border border-gray-200 p-3">
             <div className="flex items-center gap-3">
-                <Icon className={`${"text-" + color}`} />
+                <Icon className={`${ color}`} />
                 <div className="flex flex-col">
                     <span className="text-sm font-medium">{title}</span>
                     <span className="text-xs text-gray-500">
@@ -78,21 +78,21 @@ export default function ComplianceChecker() {
     ];
     return (
         <>
-            <div className="flex flex-col gap-4 mt-6">
+            <div className="flex  font-normal flex-col gap-4 mt-6">
                 <div className=" rounded-md border border-gray-200 p-4 flex flex-col  gap-4">
-                    <p className="flex gap-2 items-center"> <MessageCircle className="w-4" />Send Test Compliance Checker</p>
+                    <p className="flex text-md gap-2 items-center"> <MessageCircle className="w-4" />Send Test Compliance Checker</p>
                     <div className="flex justify-between items-center mt-6">
                         <div className="w-1/2">
-                            <p>Customer Contact</p>
+                            <p className="text-md">Customer Contact</p>
                             <input
-                                className="w-full p-2 bg-gray-100 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                className="w-full px-2 py-1 bg-gray-200/50 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
                                 type="email"
                                 placeholder="test@example.com" />
                         </div>
                         <div className="pl-2 w-1/2">
-                            <p>Message Type</p>
+                            <p className="text-md">Message Type</p>
                             <select
-                                className="w-full border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                className="w-full border border-gray-200 rounded-lg px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
                             >
                                 <option value="Friendly">Collection Email</option>
                                 <option value="Firm">Collection SMS</option>
@@ -101,10 +101,10 @@ export default function ComplianceChecker() {
                             </select>
                         </div>
                     </div>
-                    <button className="rounded-md bg-gray-900 text-white w-full p-2">Check Compliance</button>
+                    <button className="rounded-md bg-gray-900 text-white text-sm font-medium w-full px-2 py-1 ">Check Compliance</button>
                     <div className="rounded-md border border-gray-200 bg-gray-100 px-2">
-                        <span className="flex gap-2 items-center font-semibold text-green-700"><ComponentIcon className="w-4" />Compliance Checked Passed</span>
-                        <div className="flex flex-col text-gray-500">
+                        <span className="flex gap-2 items-center font-medium text-sm text-green-700"><ComponentIcon className="w-4" />Compliance Checked Passed</span>
+                        <div className="flex flex-col text-gray-500 text-xs gap-1">
                             <span>✓ Customer has opted in for email communications</span>
                             <span>✓ Message content follows FDCPA guidelines</span>
                             <span>✓ Sending within allowed business hours</span>
@@ -112,8 +112,8 @@ export default function ComplianceChecker() {
                         </div>
                     </div>
                 </div>
-                <div className="rounded-md border border-gray-200 p-4">
-                    <p className="">Compliance Rules Status</p>
+                <div className="rounded-md font-normal  border border-gray-200 p-4">
+                    <p className=" text-md">Compliance Rules Status</p>
 
                     {complianceData.map((item) => (
                         <Card

@@ -10,7 +10,7 @@ export default function MainLayout() {
       {/* Right side */}
       <main className="flex-1 flex flex-col">
         {/* Scrollable content only */}
-        <div className="flex-1 overflow-y-auto p-5 bg-gray-100">
+        <div className="flex-1 overflow-y-auto p-5">
           <Outlet />
         </div>
       </main>

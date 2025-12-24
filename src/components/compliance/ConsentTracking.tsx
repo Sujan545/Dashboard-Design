@@ -25,19 +25,21 @@ interface ConsentRow {
 
 function Card({ channel, consented, noConsent, pending }: ConsentSummary) {
     return (
-        <div className="rounded-md border border-gray-200 w-1/3 p-4">
-            <p className="font-semibold">{channel} Consent</p>
-            <div className="flex justify-between pt-4 ">
-                <span className="text-sm">Consented</span>
-                <span className="font-semibold">{consented}</span>
-            </div>
-            <div className="flex justify-between">
-                <span className="text-sm">No Consent</span>
-                <span className="font-semibold">{noConsent}</span>
-            </div>
-            <div className="flex justify-between">
-                <span className="text-sm">pending</span>
-                <span className="font-semibold">{pending}</span>
+        <div className="rounded-md font-normal border border-gray-200 w-1/3 p-4">
+            <p className="font-medium text-sm">{channel} Consent</p>
+            <div className="flex flex-col gap-2">
+                <div className="flex justify-between pt-4 ">
+                    <span className="text-sm">Consented</span>
+                    <span className="">{consented}</span>
+                </div>
+                <div className="flex justify-between">
+                    <span className="text-sm">No Consent</span>
+                    <span className="f">{noConsent}</span>
+                </div>
+                <div className="flex justify-between">
+                    <span className="text-sm">pending</span>
+                    <span className="">{pending}</span>
+                </div>
             </div>
         </div>
     )
@@ -109,18 +111,18 @@ export default function ConsentTracking() {
     const colorCheck: Record<string, string> = {
         "Consent": "bg-green-200",
         "Pending": "bg-yellow-200",
-        "No Consent": "bg-orange-200",
+        "No Consent": "bg-red-200",
     }
 
     return (
         <>
-            <div className=" flex flex-col gap-4">
+            <div className=" flex flex-col gap-4 font-normal">
                 <div className="rounded-md border border-gray-200 flex flex-col gap-4 p-4 mt-4">
-                    <p className="flex gap-2 "><User2 className="w-4" />Consent Status by Customer</p>
+                    <p className="flex gap-2 text-md "><User2 className="w-4" />Consent Status by Customer</p>
 
                     <div className="overflow-x-auto">
                         <table className="text-sm text-left w-full">
-                            <thead className="border-b text-gray-600">
+                            <thead className="border-b font-medium">
                                 <tr className="border-b border-gray-200">
                                     <th className="py-3">Customer</th>
                                     <th>Email</th>
@@ -157,12 +159,12 @@ export default function ConsentTracking() {
                                                 {item.voice}
                                             </span>
                                         </td>
-                                        <td className="text-gray-500">
+                                        <td className="text-gray-500 text-xs ">
                                             {item.lastUpdated}
                                         </td>
 
                                         <td className="">
-                                            <button className="text-sm font-mediu hover:bg-gray-300 px-2 rounded-md">
+                                            <button className="text-xs font-mediu hover:bg-gray-300 px-2 py-0.5 rounded-md">
                                                 {item.action}
                                             </button>
                                         </td>
